@@ -1,0 +1,74 @@
+{
+    "id": "5dca27fea3168704a312bfeb",
+    "dishName": "Milanesa con Papas Fritas",
+    "ubicacion": "Av. Corrientes 1612, Buenos Aires, Argentina",
+    "imageUrl": "https://www.viajejet.com/wp-content/viajes/Plato-de-milanesa-con-papas-ti%CC%81pico-de-Argentina.jpg",
+    "imagenRanking": "5_mini_star.png",
+    "restaurantName": "El Palacio de la Papa Frita",
+    "distance": "2.7 Km",
+    "precio": "495",
+    "descripcion": [
+        "La mozzarella (mozarela,1​ muzarela, muzarella, musarela2​) del italiano mozzare ‘cortar’ o de su variante regional muzzare, es un tipo de queso originario de la cocina italiana. Existe una variante de este queso en Dinamarca, pero la tradición italiana es más antigua. La ciudad de origen de este queso fue Aversa (Caserta). La denominación de origen con protección europea es la Mozzarella di Bufala Campana, sin que haya solicitado Italia la protección del nombre mozzarella."
+    ],
+    "imagenUbicacion": "mapa.png",
+    "mediosPago": [
+        {
+            "medio": "Visa",
+            "imagen": "visa.png"
+        },
+        {
+            "medio": "Mastercard",
+            "imagen": "mastercard.png"
+        },
+        {
+            "medio": "Mercado Pago",
+            "imagen": "mercadopago.png"
+        },
+        {
+            "medio": "Efectivo",
+            "imagen": "efectivo.png"
+        }
+    ],
+    "reviews": [
+        {
+            "id_review": "01010101010",
+            "nombreUsuario": "Ale AC",
+            "opiniones": "107 opiniones - 328 fotos",
+            "comentario": "Excelente opción en Puerto Madero. Muy buena variedad. Un lugar muy bien decorado y sobre todas las cosas con muy buenas opciones y de rápida atención. Se puede comer adentro o afuera y está muy bien ubicado. Genial !",
+            "fotoUsuario": "userReview.jpg"
+        },
+        {
+            "id_review": "01010101010",
+            "nombreUsuario": "Ale AC",
+            "opiniones": "107 opiniones - 328 fotos",
+            "comentario": "Excelente opción en Puerto Madero. Muy buena variedad. Un lugar muy bien decorado y sobre todas las cosas con muy buenas opciones y de rápida atención. Se puede comer adentro o afuera y está muy bien ubicado. Genial !",
+            "fotoUsuario": "userReview.jpg"
+        }
+    ],
+    "calificaciones": [
+        {
+            "nombre": "Precio",
+            "imagen": "5_ultramini.png"
+        },
+        {
+            "nombre": "Ubicación",
+            "imagen": "5_ultramini.png"
+        },
+        {
+            "nombre": "Tamaño de la Porción",
+            "imagen": "5_ultramini.png"
+        },
+        {
+            "nombre": "Atención",
+            "imagen": "5_ultramini.png"
+        },
+        {
+            "nombre": "Presentación",
+            "imagen": "5_ultramini.png"
+        },
+        {
+            "nombre": "Tiempos de Entrega",
+            "imagen": "5_ultramini.png"
+        }
+    ]
+}
