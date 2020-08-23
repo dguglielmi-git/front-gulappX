@@ -9,6 +9,7 @@
     "@material-ui/lab": "^4.0.0-alpha.30",
     "@material-ui/styles": "^4.5.0",
     "classnames": "^2.2.6",
+    "date-fns": "^2.15.0",
     "google-maps-react": "^2.0.2",
     "material-table": "^1.53.0",
     "primeflex": "^2.0.0-rc.1",

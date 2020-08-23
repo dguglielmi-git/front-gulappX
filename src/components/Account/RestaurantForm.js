@@ -95,7 +95,8 @@ export default function RestaurantForm({ sucursales, ubicacion, newDish, setNewD
             "branchName": "Vicente Lopez"
         }
         try {
-            await fetch(`http://localhost:47000/apiGulappX/getRestaurantMenu`, {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/getRestaurantMenu';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',
@@ -134,7 +135,8 @@ export default function RestaurantForm({ sucursales, ubicacion, newDish, setNewD
         }
         // console.log("payload", payload)
         try {
-            await fetch(`http://localhost:47000/apiGulappX/insertDish`, {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/insertDish';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',

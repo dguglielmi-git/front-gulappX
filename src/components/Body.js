@@ -83,7 +83,8 @@ export default function Body({ validateLogin }) {
                 "address": "Lima 775, Buenos Aires, Argentina"
             }
             try {
-                await fetch(`http://localhost:47000/apiGulappX/getDishesbyName/`, {
+                const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/getDishesbyName/'
+                await fetch(rutaBackend, {
                     method: 'POST',
                     credential: 'include',
                     mode: 'cors',

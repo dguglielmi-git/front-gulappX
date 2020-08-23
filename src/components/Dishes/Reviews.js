@@ -97,7 +97,8 @@ export default function Reviews({ reviews, dishId, fetchComments, fetchAverage }
             // "avgStar": 
         }
         try {
-            await fetch(`http://localhost:47000/apiGulappX/insertComment`, {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/insertComment';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',
@@ -118,29 +119,11 @@ export default function Reviews({ reviews, dishId, fetchComments, fetchAverage }
         }
     }
 
-    // const enterPressed = (event) => {
-    //     var code = event.keyCode || event.which;
-    //     if (code === 13) { //13 is the enter keycode
-    //         if (comment === "") {
-    //             setError(true)
-    //             setErrorMsg("Por favor escribi algun comentario sobre el plato.")
-    //         }
-    //         else if (ratings === 0) {
-    //             setError(true)
-    //             setErrorMsg("Por favor calificar el plato.")
-    //         }
-    //         else {
-    //             insertComment(comment, ratings);
-    //         }
-    //     }
-    // }
-
     const validateReviews = () => {
         const found = Object.values(ratings).find(value => value === 0);
         if (found === 0) {
             setError(true)
             setErrorMsg("Por favor califica todas las categorias. Ésto ayuda a los usuarios a encontrar el mejor plato.")
-            // alert("Por favor califica todas las categorias. Ésto ayuda a los usuarios a encontrar el mejor plato.")
         }
         else {
             insertComment(comment, ratings);

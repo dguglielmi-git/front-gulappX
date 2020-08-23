@@ -30,9 +30,23 @@ function App() {
       username: user,
       password: pw,
     };
-    console.log("Usuario: " + user + " - password: " + pw);
+    // Desarrollo
+    localStorage.setItem("rutaBackend", "http://localhost:47000/");
+    localStorage.setItem(
+      "rutaBackendLogin",
+      "http://localhost:47001/"
+    );
+
+    // Produccion
+   /* localStorage.setItem("rutaBackend", "https://backgulapp.herokuapp.com/");
+    localStorage.setItem(
+      "rutaBackendLogin",
+      "https://backgulapp.herokuapp.com/"
+    );*/
+
     try {
-      await fetch(`http://localhost:47001/login`, {
+      const rutabkl = localStorage.getItem("rutaBackendLogin") + 'login';
+      await fetch(rutabkl, {
         method: "POST",
         credential: "include",
         mode: "cors",
@@ -70,7 +84,8 @@ function App() {
       address: location,
     };
     try {
-      await fetch(`http://localhost:47001/register`, {
+      const rutaBackendLogin = localStorage.getItem("rutaBackendLogin") + 'register';
+      await fetch(rutaBackendLogin, {
         method: "POST",
         credential: "include",
         mode: "cors",

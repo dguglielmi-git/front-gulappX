@@ -87,6 +87,7 @@ export default function Dishes({
 
     const selected = (_summary, _detail) => {
         let msg = {
+            life:5000,
             severity: 'success',
           summary: 'Reserva Confirmada',
           detail: _detail,
@@ -102,7 +103,8 @@ export default function Dishes({
             "address": "Lima 778, buenos aires, argentina"
         }
         try {
-            await fetch("http://localhost:47000/apiGulappX/getDishesbyId", {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/getDishesbyId';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',
@@ -131,7 +133,8 @@ export default function Dishes({
             "dishId": match.params.id,
         }
         try {
-            await fetch("http://localhost:47000/apiGulappX/getDishAveragebyId", {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/getDishAveragebyId';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',
@@ -160,7 +163,8 @@ export default function Dishes({
             "dishId": match.params.id,
         }
         try {
-            await fetch(`http://localhost:47000/apiGulappX/getCommentsbyId`, {
+            const rutaBackend = localStorage.getItem("rutaBackend") + 'apiGulappX/getCommentsbyId';
+            await fetch(rutaBackend, {
                 method: 'POST',
                 credential: 'include',
                 mode: 'cors',

@@ -11,8 +11,8 @@ import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import BotoneraReserva from "./Reservar/BotoneraReserva";
 import ListadoHoras from "./Reservar/ListadoHoras.js";
 import Smoking from "./Reservar/Smoking.js";
-import LeyendaMesa from "./Reservar/LeyendaMesa.js";
 import Calendar from "./Utils/Calendar.js";
+import { format } from "date-fns";
 
 const GreenCheckbox = withStyles({
   root: {
@@ -33,15 +33,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    //justifyContent: 'center',
     width: "380px",
     height: "580px",
     overflow: "hidden",
+    background: "#F3EFEF",
   },
   titulo: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#5B3CE3",
+    marginTop: "15px",
+    marginBottom: "-15px",
     justifyContent: "center",
     width: "100%",
     alignItems: "center",
@@ -53,6 +54,7 @@ export default function Reservar({ setModalDishes, selected }) {
   const estilos = useStyles();
   const [smokeState, setSmokeState] = React.useState(false);
   const [tableState, setTableState] = React.useState("vacio");
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
 
   // Codigo para Checkbox
   const [state, setState] = React.useState({
@@ -71,6 +73,18 @@ export default function Reservar({ setModalDishes, selected }) {
   };
   // fin codigo checkbox
 
+  const confirmar = () => {
+    if (tableState === "vacio") {
+      alert("No ha seleccionado un horario.");
+    } else {
+      var fechaSeleccionada = format(new Date(selectedDate), "dd/MM/yyyy");
+      selected(
+        "Reserva Confirmada",
+        tableState + " con fecha: " + fechaSeleccionada
+      );
+      setModalDishes(false);
+    }
+  };
   const horarios = [
     { id: "1", hora: "20:00" },
     { id: "2", hora: "20:30" },
@@ -87,13 +101,22 @@ export default function Reservar({ setModalDishes, selected }) {
   return (
     <div className={estilos.root}>
       <div className={estilos.titulo}>
-        <Typography variant="h5">Reservar una mesa</Typography>
+        <Typography
+          variant="h5"
+          style={{
+            fontFamily: "Krona One",
+            color: "black",
+            textShadow: "0 0 0.1em #87F, 0 0 0.1em #87F, 0 0 0.1em #87F",
+          }}
+        >
+          Haga su Reserva
+        </Typography>
       </div>
       <div
-        style={{ 
-            display: "flex", 
-            flexWrap: "wrap", 
-            justifyContent: "center" 
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
         }}
       >
         <div>
@@ -104,7 +127,10 @@ export default function Reservar({ setModalDishes, selected }) {
             margin="normal"
           />
         </div>
-        <Calendar />
+        <Calendar
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
         <div
           style={{
             display: "flex",
@@ -112,12 +138,7 @@ export default function Reservar({ setModalDishes, selected }) {
             justifyContent: "center",
           }}
         >
-          <ListadoHoras
-            horarios={horarios}
-            setTableState={setTableState}
-            selected={selected}
-          />
-          <LeyendaMesa tableState={tableState} />
+          <ListadoHoras horarios={horarios} setTableState={setTableState} />
         </div>
 
         <div style={{ width: "200px" }}>
@@ -136,7 +157,11 @@ export default function Reservar({ setModalDishes, selected }) {
         </div>
         <Smoking smokeState={smokeState} />
       </div>
-      <BotoneraReserva setModalDishes={setModalDishes} />
+      <BotoneraReserva
+        setModalDishes={setModalDishes}
+        selected={selected}
+        confirmar={confirmar}
+      />
       <hr></hr>
     </div>
   );
