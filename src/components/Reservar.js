@@ -90,7 +90,11 @@ export default function Reservar({ setModalDishes, selected }) {
         <Typography variant="h5">Reservar una mesa</Typography>
       </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+        style={{ 
+            display: "flex", 
+            flexWrap: "wrap", 
+            justifyContent: "center" 
+        }}
       >
         <div>
           <TextField
