@@ -17,15 +17,15 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function ListadoHoras({ horarios, setTableState }) {
+export default function ListadoHoras({ horarios, setTableState, selected }) {
 
     const estilos = useStyles();
     const [selectedIndex, setSelectedIndex] = React.useState(1);
     
     const handleListItemClick = (event, index, valor, setTableState) => {
         setSelectedIndex(index);
-        setTableState(valor);
-    
+        //setTableState(valor);
+        selected("Reserva Confirmada", `Se ha seleccionado una reserva para las: ${valor}. Para finalizar pulse el botón Confirmar o Cancelar para anular.`);
     };
 
     return (

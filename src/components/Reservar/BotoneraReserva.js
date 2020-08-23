@@ -17,7 +17,8 @@ export default function BotoneraReserva({ setModalDishes }){
 
     return (
         <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center',  marginTop:'20px', width: '400px' }}>
-            <Button color="primary" className={estilos.button}>
+            <Button color="primary" className={estilos.button}
+            onClick={() => setModalDishes(false)}>
                 Confirmar
             </Button>
             <Button color="primary" className={estilos.button}

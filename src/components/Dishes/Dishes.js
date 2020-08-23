@@ -1,9 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Titulo from './Titulo_Dishes.js';
 import MarcoImagen from './MarcoImagen.js';
 import BloqueDescripcion from './BloqueDescripcion.js';
+import {Toast} from 'primereact/toast';
+//import "primereact/resources/themes/nova-light/theme.css";
+import "primereact/resources/themes/nova-accent/theme.css";
+import 'primereact/resources/primereact.min.css';
+import "primeicons/primeicons.css";
+import "primeflex/primeflex.css";
 import MarcoMapa from './MarcoMapa.js';
 import Botonera from './Botonera.js';
 import MediosPago from './MediosPago.js';
@@ -25,7 +31,6 @@ const useStyles = makeStyles({
         flexWrap: 'wrap',
         marginTop: "65px",
         fontFamily: 'Oswald',
-        // backgroundImage: "radial-gradient(circle, #DEDADA, #A6A4A4, #433F3F)",
     },
     secondFrame: {
         width: "100%",
@@ -59,7 +64,7 @@ export default function Dishes({
     match
 }) {
     const estilos = useStyles();
-
+    const refToast = useRef();
     const [modalDishes, setModalDishes] = React.useState(false);
     const [content, setContent] = React.useState();
     const [dish, setDish] = React.useState({});
@@ -79,6 +84,15 @@ export default function Dishes({
         fetchAverage();
     }, [])
 
+
+    const selected = (_summary, _detail) => {
+        let msg = {
+            severity: 'success',
+          summary: 'Reserva Confirmada',
+          detail: _detail,
+        };
+        refToast.current.show(msg);
+      };
 
     const fetchDish = async () => {
         // setLoading(true);
@@ -170,6 +184,7 @@ export default function Dishes({
     if (Object.keys(dish).length > 0) {
         return (
             <div className={estilos.app}>
+                <Toast ref={refToast} position="bottom-right" style={{zIndex:'100', opacity:1}}/>
                 <Titulo
                     nombrePlato={dish.dishName}
                     average={average.avgTotal}
@@ -193,6 +208,7 @@ export default function Dishes({
                         geo={dish.geo}
                         distance={dish.distance}
                         precio={dish.pricing}
+                        selected={selected}
                     />
                     {/* <MarcoMapa imagenUbicacion={dish.imagenUbicacion} mediosPago={dish.mediosPago} /> */}
                     {/* </div> */}

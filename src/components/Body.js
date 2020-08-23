@@ -159,19 +159,19 @@ export default function Body({ validateLogin }) {
             {!resultState && (
                 <div style={{ backgroundColor: "#f8f8f8" }}><h2 style={{ marginTop: "0px", paddingTop: "5px", textAlign: "center" }}>Sugeridos para vos:</h2>
                     <div className={classes.sugerencias}>
-                        <Link to={`/dish/5dca27fea3168704a312bfeb`} className={classes.link}>
+                        <Link to={`/dish/5f3f531122faca6085937cda`} className={classes.link}>
                             <ImgCard
                                 dish={Resultado}
                                 validateLogin={validateLogin}
                             />
                         </Link>
-                        <Link to={`/dish/5dcc507b167d71092ac65860`} className={classes.link}>
+                        <Link to={`/dish/5f3f50c422faca6085937cd9`} className={classes.link}>
                             <ImgCard
                                 dish={Resultado2}
                                 validateLogin={validateLogin}
                             />
                         </Link>
-                        <Link to={`/dish/5dca25784cb66e0465cc96d2`} className={classes.link}>
+                        <Link to={`/dish/5f3dfb16ba4e5a5e681df31f`} className={classes.link}>
                             <ImgCard
                                 dish={Resultado3}
                                 validateLogin={validateLogin}
