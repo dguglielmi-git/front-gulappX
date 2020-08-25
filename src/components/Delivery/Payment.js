@@ -1,7 +1,6 @@
 import React from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
-import TextField from '@material-ui/core/TextField';
 import InputMask from 'react-input-mask';
 
 export default class PaymentForm extends React.Component {

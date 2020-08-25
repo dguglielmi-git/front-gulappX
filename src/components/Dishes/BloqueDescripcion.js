@@ -1,7 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
-import Typography from "@material-ui/core/Typography";
 import MapContainer from "../Map/Map";
 import Botonera from "./Botonera.js";
 
@@ -11,7 +9,6 @@ const useStyles = makeStyles({
     width: "100%",
     marginLeft: "1%",
     paddingLeft: "24px",
-    // width: '550px',
     flexDirection: "column",
     borderLeft: "1px solid #BFBABB",
     fontFamily: "Oswald",
@@ -30,7 +27,7 @@ export default function BloqueDescripcion({
   selected,
 }) {
   const estilos = useStyles();
-  const loggedUser = JSON.parse(localStorage.getItem("user")); 
+  const loggedUser = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div className={estilos.marcoDescripcion}>

@@ -8,7 +8,6 @@ const useStyles = makeStyles({
   app: {
     display: 'flex',
     flexWrap: 'wrap',
-   // backgroundImage: "radial-gradient(circle, #DEDADA, #A6A4A4, #433F3F)",
   },
 });
 

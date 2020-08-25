@@ -195,7 +195,6 @@ export default function Body({ validateLogin }) {
                 ContentProps={{
                     'aria-describedby': 'message-id',
                 }}
-                // classes={{ root: classes.snackbar, paper: classes.snackbar, }}
                 message={<span id="message-id">{errorMsg}</span>}
                 action={[
                     <IconButton

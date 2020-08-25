@@ -1,9 +1,7 @@
 import React from "react";
-import { green } from "@material-ui/core/colors";
 import Checkbox from "@material-ui/core/Checkbox";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -13,16 +11,6 @@ import ListadoHoras from "./Reservar/ListadoHoras.js";
 import Smoking from "./Reservar/Smoking.js";
 import Calendar from "./Utils/Calendar.js";
 import { format } from "date-fns";
-
-const GreenCheckbox = withStyles({
-  root: {
-    color: green[400],
-    "&$checked": {
-      color: green[600],
-    },
-  },
-  checked: {},
-})((props) => <Checkbox color="default" {...props} />);
 
 const useStyles = makeStyles((theme) => ({
   textField: {
@@ -56,7 +44,6 @@ export default function Reservar({ setModalDishes, selected }) {
   const [tableState, setTableState] = React.useState("vacio");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
-  // Codigo para Checkbox
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -71,7 +58,6 @@ export default function Reservar({ setModalDishes, selected }) {
   const handleChange = (name) => (event) => {
     setState({ ...state, [name]: event.target.checked });
   };
-  // fin codigo checkbox
 
   const confirmar = () => {
     if (tableState === "vacio") {

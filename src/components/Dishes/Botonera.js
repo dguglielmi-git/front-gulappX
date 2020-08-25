@@ -1,9 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import Reservar from "../Reservar";
 import Delivery from "../Delivery/Delivery";
-import VerDatos from "../VerDatos";
+import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
 
 const btnStyles = makeStyles((theme) => ({
   button: {
@@ -55,14 +54,13 @@ export default function Botonera({
         color="primary"
         className={btnestilo.button}
         onClick={() =>
-          handleClick(<Reservar setModalDishes={setModalDishes} selected={selected} />)
+          handleClick(
+            <Reservar setModalDishes={setModalDishes} selected={selected} />
+          )
         }
       >
         Reservar Mesa
       </Button>
-      {/* <Button variant="contained" color="primary" className={btnestilo.button} onClick={() => handleClick(<VerDatos setModalDishes={setModalDishes} />)}>
-                Datos del Lugar
-            </Button> */}
     </div>
   );
 }

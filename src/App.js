@@ -41,7 +41,7 @@ function App() {
    /* localStorage.setItem("rutaBackend", "https://backgulapp.herokuapp.com/");
     localStorage.setItem(
       "rutaBackendLogin",
-      "https://backgulapp.herokuapp.com/"
+      "https://backendgulapplogin.herokuapp.com/"
     );*/
 
     try {
@@ -85,7 +85,8 @@ function App() {
     };
     try {
       const rutaBackendLogin = localStorage.getItem("rutaBackendLogin") + 'register';
-      await fetch(rutaBackendLogin, {
+      console.log("rutaBackendLogin: " + rutaBackendLogin)
+      await fetch(`http://localhost:47001/register`, {
         method: "POST",
         credential: "include",
         mode: "cors",
@@ -107,8 +108,6 @@ function App() {
     const logged = localStorage.getItem("user");
     if (!logged) return false;
     return true;
-
-    // setModalState(true)
   };
 
   const Home = () => (

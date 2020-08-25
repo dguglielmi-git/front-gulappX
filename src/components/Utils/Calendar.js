@@ -4,12 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
 export default function Calendar({ selectedDate, setSelectedDate }) {
-  // The first commit of Material-UI
   var today = new Date();
   var date =
     today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();

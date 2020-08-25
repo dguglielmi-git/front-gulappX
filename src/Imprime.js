@@ -1,8 +1,7 @@
 import React from "react";
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
-import Box from '@material-ui/core/Box';
+import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles({
   avatar: {
@@ -14,43 +13,52 @@ const useStyles = makeStyles({
     height: 60,
   },
   boxCalificacion: {
-    display: 'flex',
-
+    display: "flex",
   },
 });
 
 export default function Imprime({
-  parametro, nombre, imagen,
-  nombreUsuario, opiniones, comentarioReview, fotoUsuario,
+  parametro,
+  nombre,
+  imagen,
+  nombreUsuario,
+  opiniones,
+  comentarioReview,
+  fotoUsuario,
 }) {
   const estilos = useStyles();
-  if (parametro === 'calificaciones') {
+  if (parametro === "calificaciones") {
     return (
       <div className={estilos.boxCalificacion}>
-        <img width="80" height="17" src={require(`./images/stars/${imagen}`)}></img>
-        <Typography style={{ paddingLeft: "10px" }} component="h6" variant="subtitle2">
+        <img
+          width="80"
+          height="17"
+          src={require(`./images/stars/${imagen}`)}
+          alt =""
+        ></img>
+        <Typography
+          style={{ paddingLeft: "10px" }}
+          component="h6"
+          variant="subtitle2"
+        >
           {nombre}
         </Typography>
       </div>
     );
   }
-  if (parametro === 'descripcion') {
-    return (
-      <div>
-
-      </div>
-    );
+  if (parametro === "descripcion") {
+    return <div></div>;
   }
-  if (parametro === 'review') {
+  if (parametro === "review") {
     return (
       <div className={estilos.boxCalificacion}>
-        {/* <Avatar alt="Remy Sharp" src={require(`./images/${fotoUsuario}`)} className={estilos.avatar} /> */}
         <div>
           <Typography component="h6" variant="subtitle2">
-            <Box fontWeight="fontWeightBold" m={1}>{nombreUsuario}</Box>
+            <Box fontWeight="fontWeightBold" m={1}>
+              {nombreUsuario}
+            </Box>
           </Typography>
-          {/* <Typography style={{color:'gray'}}component="h6" variant="caption">{opiniones}</Typography> */}
-          <div style={{ width: '800px' }}>
+          <div style={{ width: "800px" }}>
             <Box display="flex" p={1} bgcolor="background.paper">
               {comentarioReview}
             </Box>
@@ -58,9 +66,7 @@ export default function Imprime({
         </div>
       </div>
     );
+  } else {
+    return <div></div>;
   }
-  else {
-    return (<div></div>);
-  }
-
 }
