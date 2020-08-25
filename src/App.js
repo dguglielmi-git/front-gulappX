@@ -5,17 +5,12 @@ import Body from "./components/Body";
 import Menu from "./components/Menu";
 import Modal from "./components/Modal";
 import MyAccount from "./components/MyAccount";
-import ProdResult from "./prodResult.js";
-import Resultado from "./resultado.json";
 import Dishes from "./components/Dishes/Dishes.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
 
 function App() {
   const [menuState, setMenuState] = React.useState(false);

@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, ThemeProvider } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
@@ -34,7 +34,7 @@ export default function Imprime({
           width="80"
           height="17"
           src={require(`./images/stars/${imagen}`)}
-          alt =""
+          alt=""
         ></img>
         <Typography
           style={{ paddingLeft: "10px" }}
