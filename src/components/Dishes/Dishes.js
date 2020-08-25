@@ -45,12 +45,12 @@ const useStyles = makeStyles({
 });
 
 export default function Dishes({ validateLogin, setModalState, match }) {
-  const estilos = useStyles();
   const refToast = useRef();
-  const [modalDishes, setModalDishes] = React.useState(false);
-  const [content, setContent] = React.useState();
+  const estilos = useStyles();
   const [dish, setDish] = React.useState({});
+  const [content, setContent] = React.useState();
   const [comments, setComments] = React.useState([]);
+  const [modalDishes, setModalDishes] = React.useState(false);
   const [average, setAverage] = React.useState({
     avgAttention: 0,
     avgLocation: 0,
